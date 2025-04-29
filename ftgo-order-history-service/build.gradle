@@ -6,6 +6,9 @@ buildscript {
         classpath "com.avast.gradle:gradle-docker-compose-plugin:$dockerComposePluginVersion"
     }
     repositories {
+        maven {
+            url "https://maven.aliyun.com/repository/public"
+        }
         mavenCentral()
         jcenter()
     }

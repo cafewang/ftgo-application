@@ -1,7 +1,6 @@
 package net.chrisrichardson.ftgo.kitchenservice.domain;
 
 import io.eventuate.tram.events.aggregates.ResultWithDomainEvents;
-import net.chrisrichardson.ftgo.common.NotYetImplementedException;
 import net.chrisrichardson.ftgo.common.RevisedOrderLineItem;
 import net.chrisrichardson.ftgo.common.UnsupportedStateTransitionException;
 import net.chrisrichardson.ftgo.kitchenservice.api.TicketDetails;
@@ -12,8 +11,8 @@ import net.chrisrichardson.ftgo.kitchenservice.api.events.TicketDomainEvent;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
@@ -68,7 +67,8 @@ public class Ticket {
   }
 
   public List<TicketDomainEvent> cancelCreate() {
-    throw new NotYetImplementedException();
+    state = TicketState.CANCELLED;
+    return Collections.emptyList();
   }
 
 

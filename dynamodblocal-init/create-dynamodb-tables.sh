@@ -1,4 +1,4 @@
-#! /bin/sh -e
+#! /bin/bash -e
 
 echo Initializing DynamoDB at endpoint ${AWS_DYNAMODB_ENDPOINT_URL}
 

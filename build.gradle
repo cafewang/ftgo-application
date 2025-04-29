@@ -1,5 +1,8 @@
 buildscript {
     repositories {
+        maven {
+            url "https://maven.aliyun.com/repository/public"
+        }
         mavenCentral()
         jcenter()
     }
@@ -26,10 +29,11 @@ subprojects {
     group = "net.chrisrichardson.ftgo"
 
     repositories {
+        maven {
+            url "https://maven.aliyun.com/repository/public"
+        }
         eventuateMavenRepoUrl.split('[ ,]').each { repoUrl -> maven { url repoUrl.trim() } }
-
         mavenCentral()
-        jcenter()
 
         maven {
             url 'https://jitpack.io'
@@ -74,7 +78,7 @@ dockerCompose {
 
   projectName = null
   removeOrphans = true
-  retainContainersOnStartupFailure = true
+  retainContainersOnStartupFailure = false
 
   if (project.hasProperty('startedServices'))
     startedServices= project.ext.startedServices.split(',')

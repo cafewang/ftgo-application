@@ -17,6 +17,9 @@ configurations.all {
 }
 
 repositories {
+    maven {
+        url "https://maven.aliyun.com/repository/public"
+    }
     mavenCentral()
     maven {
         url 'http://oss.jfrog.org/oss-snapshot-local/'
